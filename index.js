@@ -111,7 +111,7 @@ const internQuestions = [
     },
   },
   {
-    type: "number",
+    type: "input",
     name: "currentSchool",
     message: "What school is the intern in?",
   },

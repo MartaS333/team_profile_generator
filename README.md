@@ -20,6 +20,8 @@ This is a command-line application using Node.js hat takes in information about 
 
 ### Demo
 
+Video Demo [click here](https://drive.google.com/file/d/1arZ2lWAAdiI3WgYtPl5jSxjoYNvhlVTv/view)
+
 ### Installation
 
 after cloning the repo input 'node index.js' in the terminal to run
