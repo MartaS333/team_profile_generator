@@ -1,4 +1,4 @@
-# CLI-Team-Generator
+# Team Profile Generator
 
 ## License
 
@@ -21,6 +21,7 @@ This is a command-line application using Node.js hat takes in information about 
 ### Demo
 
 Video Demo [click here](https://drive.google.com/file/d/1arZ2lWAAdiI3WgYtPl5jSxjoYNvhlVTv/view)
+![Screenshot](https://github.com/MartaS333/team_profile_generator/blob/main/assets/screenshot.png)
 
 ### Installation
 
