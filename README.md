@@ -35,6 +35,3 @@ Creates a directory of all team members and their roles.
 
 npm test
 
-#### Links
-
-To see more of my work check my [Github](https://github.com/Codeyg12). For futher questions you can reach me at codey.gallup@gmail.com.
