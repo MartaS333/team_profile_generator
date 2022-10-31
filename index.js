@@ -1,7 +1,7 @@
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
-//sets up the path so in my fs it will use variables
+
 const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -12,7 +12,7 @@ const generateNewCard = require("./src/template");
 //This will hold all user inputted team members
 let teamArray = [];
 
-//inital questions relating to the manager
+//manager questions
 const managerQuestions = [
   {
     type: "input",
@@ -49,7 +49,7 @@ const managerQuestions = [
   },
 ];
 
-//questions if engineer is selected
+//engineer questions
 const engineerQuestions = [
   {
     type: "input",
@@ -86,7 +86,7 @@ const engineerQuestions = [
   },
 ];
 
-//questions if intern is selected
+//intern questions
 const internQuestions = [
   {
     type: "input",
@@ -123,10 +123,8 @@ const internQuestions = [
   },
 ];
 
-//First set off questions starting with the manager
 function startBuilding() {
   inquirer.prompt(managerQuestions).then((data) => {
-    //Takes user answers and puts them into new object and pushes to the array
     const manager = new Manager(
       data.managerName,
       data.managerId,
@@ -134,7 +132,7 @@ function startBuilding() {
       data.officeNumber
     );
     teamArray.push(manager);
-    //Switch case for question regarding adding another employee
+
     switch (data.nextEmployee) {
       case "Engineer":
         addEngineer();
@@ -143,14 +141,13 @@ function startBuilding() {
         addIntern();
         break;
 
-      //If no more memebers are added defaults to writing the file
+      //If no more members are added, HTML is completed
       default:
         finishHtml();
     }
   });
 }
 
-//These questions start if engineer is added
 function addEngineer() {
   inquirer.prompt(engineerQuestions).then((data) => {
     const engineer = new Engineer(
@@ -174,7 +171,6 @@ function addEngineer() {
   });
 }
 
-//These questions start if intern is added
 function addIntern() {
   inquirer.prompt(internQuestions).then((data) => {
     const intern = new Intern(
@@ -199,7 +195,6 @@ function addIntern() {
 }
 
 function finishHtml() {
-  //Uses all answers and previously provided variables to generate a new page
   fs.writeFile(outputPath, generateNewCard(teamArray), function (err) {
     if (err) {
       return console.log(err);
